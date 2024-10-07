@@ -1,0 +1,7 @@
+<ul>
+    <!-- <li *ngFor="let user of users | async"> -->
+   <li *ngFor="let user of userInfo.data">
+     {{ user.id }}
+     <span>{{user.first_name}} {{user.last_name}}</span>
+    </li>
+  </ul>

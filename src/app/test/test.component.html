@@ -1,0 +1,8 @@
+<form #userName="ngForm" (ngSubmit)="onClickSubmit(userName.value)"> 
+    <!--Here, we used ngModel attribute in input text field.-->
+    <!--import { FormsModule } from '@angular/forms';-->
+   <input type="text" name="username" placeholder="username" ngModel> 
+   <br/> 
+   <br/> 
+   <input type="submit" value="submit"> 
+</form>

@@ -1,0 +1,54 @@
+<div class="row">
+	<div class="col-md-2">
+		<a [routerLink]="['user/login']">Login</a>
+	</div>
+</div>
+
+<h1>
+    {{title}}
+  </h1>
+  
+  <button type="button" routerLink="/customers">Customers</button>
+  <button type="button" routerLink="/orders">Orders</button>
+  <button type="button" routerLink="">Home</button>
+  
+
+  <app-list></app-list>
+  <app-users></app-users>
+  <label appMyDirective>This is label element</label>
+  <table>
+  <tr>
+     <td>
+       <label>Please enter your password :-</label>
+     </td>
+     <td>
+       <input type="text" appPasswordlengthdetector />
+     </td>
+  </tr>
+</table>
+<h1>loose form</h1>
+<app-my-form></app-my-form>
+<h1>Strictly typed form</h1>
+<h1>create form in angular using library that supports json schema </h1>
+<app-formly-form-example></app-formly-form-example>
+<h1>Rxjs vs Signals</h1>
+<app-rxjs-pagination></app-rxjs-pagination>
+<h1>signals used</h1>
+<app-signals-pagination></app-signals-pagination>
+<h1>below different component</h1><br/>
+<app-fancybtn>Click Me</app-fancybtn>
+<app-fancybtn  (click)="btnClicked($event)"><b>Submit</b></app-fancybtn>
+ 
+<app-test></app-test>
+<app-reactive-form></app-reactive-form>
+<app-form-array></app-form-array>
+
+<!--John Papa  LIFT Guidelines-->
+<!--https://www.johnpapa.net/angular-app-structuring-guidelines/-->
+<!--Access the event object with the $event argument passed to the output event handler:-->
+<app-zippy (open)="onOpen($event)" (close)="onClose($event)">Show</app-zippy>
+
+
+  <router-outlet></router-outlet>
+  
+

@@ -1,0 +1,27 @@
+
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="form.get('form1')">
+      <ng-template matStepLabel>Personal data</ng-template>
+        <!-- <app-form1 [formGroup]="form.get('form1')"></app-form1> -->
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step [stepControl]="form.get('form2')">
+      <ng-template matStepLabel>another data</ng-template>
+        <!-- <app-form2 [formGroup]="form.get('form2')"></app-form2> -->
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <pre>{{form?.value|json}}</pre>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="submit()">Submit</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+  
