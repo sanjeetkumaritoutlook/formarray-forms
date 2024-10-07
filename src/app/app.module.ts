@@ -53,6 +53,7 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { FormlyFieldCustomInputComponent } from './formly-field-custom-input/formly-field-custom-input.component';
 import { RxjsPaginationComponent } from './rxjs-pagination/rxjs-pagination.component';
 import { SignalsPaginationComponent } from "./signals-pagination/signals-pagination.component";
+import { CustomFieldComponent } from './custom-field.type';
 import { FormlyFullFormComponent } from './formly-full-form/formly-full-form.component';
 registerLocaleData(localeFr);
 
@@ -97,6 +98,7 @@ const MaterialComponents = [
         MyTypedFormComponent,
         FormlyFormExampleComponent,
         FormlyFieldCustomInputComponent,
+        CustomFieldComponent,
         FormlyFullFormComponent,
     ],
     exports: [
@@ -115,7 +117,11 @@ const MaterialComponents = [
         FormlyBootstrapModule,
         FormlyModule.forRoot({
             validationMessages: [{ name: 'required', message: 'This field is required' }],
-            types: [{ name: 'custom', component: FormlyFieldCustomInputComponent, wrappers: ['form-field'] }],
+            types: [{ name: 'custom', component: FormlyFieldCustomInputComponent, wrappers: ['form-field'] },
+            { 
+                name: 'custom', 
+                component: CustomFieldComponent 
+               }],
         }),
         BrowserAnimationsModule,
         MaterialComponents,

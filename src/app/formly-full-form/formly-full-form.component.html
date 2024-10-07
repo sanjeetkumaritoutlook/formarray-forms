@@ -1,1 +1,6 @@
-<p>formly-full-form works!</p>
+<h1>Full Form created using Angular Formly JSON schema library</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <formly-form [form]="form" [model]="model" [fields]="fields" [options]="options"></formly-form>
+  
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
