@@ -16,7 +16,7 @@ import {
   ]
 })
 export class AppComponent {
-  title = 'new-app-forms';
+  title = 'formarray-forms';
   btnClicked($event) {
     console.log($event)
     alert('button clicked')
