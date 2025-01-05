@@ -33,11 +33,11 @@ export class SignalsPaginationComponent {
   readonly firstPage = 1;
 
   itemsPerPage = 2;
+//Use signals for managing local component state or small-scale reactivity.
+  searchInput = signal(''); // A signal with an initial value of ''
+  currentPage = signal(this.firstPage); //A signal is a reactive primitive that holds a value. 
 
-  searchInput = signal('');
-  currentPage = signal(this.firstPage);
-
-  paginatedAndFilteredUsers = computed(() => {
+  paginatedAndFilteredUsers = computed(() => { //A computed signal derives its value from other signals.
     const startIndex = (this.currentPage() - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
     return users
@@ -46,6 +46,7 @@ export class SignalsPaginationComponent {
       )
       .slice(startIndex, endIndex);
   });
+  //A computed signal automatically updates when its dependencies change.
 
   searchUser(searchText: string): void {
     this.searchInput.set(searchText);

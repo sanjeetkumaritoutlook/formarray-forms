@@ -35,9 +35,9 @@ export class RxjsPaginationComponent {
   readonly firstPage = 1;
 
   itemsPerPage = 2;
-
-  searchInput$ = new BehaviorSubject('');
-  currentPage$ = new BehaviorSubject(this.firstPage);
+//Combine signals with RxJS for advanced scenarios like handling streams, asynchronous operations, or cross-component communication.
+  searchInput$ = new BehaviorSubject(''); //$ suffix means its Observable
+  currentPage$ = new BehaviorSubject(this.firstPage); //Subject is special type of Observable that allows values to be multicasted to many Observers.
 
   paginatedAndFilteredUsers$ = combineLatest([  //combining latest values from multiple observables into a new observable
     this.currentPage$.pipe(distinctUntilChanged()), // trigger only when it actually changes
